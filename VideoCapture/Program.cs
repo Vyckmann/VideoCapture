@@ -28,7 +28,7 @@ namespace VideoCapture
             //videoSource.NewFrame += new NewFrameEventHandler(grabFrame);
             //videoSource.SnapshotFrame += new NewFrameEventHandler(grabFrame);
 
-            VideoCapabilities[] caps = videoSource.VideoCapabilities;            
+            VideoCapabilities[] caps = videoSource.VideoCapabilities;
            
             foreach (var cap in caps)
             {
@@ -47,8 +47,8 @@ namespace VideoCapture
             videoSource.ProvideSnapshots = true;
             videoSource.Start();
 
-            VideoCapabilities res = videoSource.VideoResolution;            
-            Console.WriteLine(res.FrameSize);            
+            VideoCapabilities res = videoSource.VideoResolution;
+            Console.WriteLine(res.FrameSize);
 
             videoSource.SimulateTrigger();
 
@@ -59,7 +59,7 @@ namespace VideoCapture
             {
                 // get new frame
                 Bitmap bitmap = eventArgs.Frame;
-                bitmap.Save("..\\..\\samples\\" + DateTime.Now.Ticks/1000 + ".png", System.Drawing.Imaging.ImageFormat.Png);                
+                bitmap.Save("..\\..\\samples\\" + DateTime.Now.Ticks/1000 + ".png", System.Drawing.Imaging.ImageFormat.Png);
 
                 // process the frame (you can do anything with it, such as running an
                 // image processing filter, saving it to disk, showing on screen, etc)
